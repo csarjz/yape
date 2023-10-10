@@ -31,6 +31,10 @@ android {
     buildFeatures {
         buildConfig = true
     }
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
+        arg("room.incremental", "true")
+    }
 }
 
 dependencies {
@@ -45,6 +49,11 @@ dependencies {
     // retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter)
+
+    // room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
 
     // testing
     testImplementation(libs.junit)
