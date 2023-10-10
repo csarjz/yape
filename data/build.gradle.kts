@@ -28,12 +28,23 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    // okhttp3
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3.interceptor)
+
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter)
 
     // testing
     testImplementation(libs.junit)
