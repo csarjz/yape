@@ -11,4 +11,9 @@ object Constant {
     object HttpCode {
         const val BAD_REQUEST = 400
     }
+
+    object Number {
+        const val ZERO = 0
+        const val ZERO_DEC = 0.0
+    }
 }
