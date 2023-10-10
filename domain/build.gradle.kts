@@ -30,6 +30,9 @@ android {
 }
 
 dependencies {
+    // hilt
+    implementation(libs.hilt.android)
+
     // testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
