@@ -8,7 +8,7 @@ import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -30,10 +30,9 @@ class GetRecipeByIdUseCaseTest {
         coEvery { recipeRepository.getRecipeById(any()) } returns recipe
         val result = getRecipeByIdUseCase(recipeId)
 
-        Assert.assertEquals(result, recipe)
+        assertEquals(result, recipe)
         coVerify(exactly = 1) { recipeRepository.getRecipeById(recipeId) }
         coVerify(exactly = 0) { recipeRepository.getRecipes() }
         coVerify(exactly = 0) { recipeRepository.refreshFromRemoteRecipes() }
-        coVerify(exactly = 0) { recipeRepository.saveRecipesLocally(any()) }
     }
 }

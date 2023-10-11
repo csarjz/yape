@@ -4,11 +4,18 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import com.csarjz.data.room.entity.RecipeEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RecipeDao {
+
+    @Transaction
+    suspend fun save(data: List<RecipeEntity>) {
+        deleteAll()
+        insert(data)
+    }
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(data: List<RecipeEntity>)

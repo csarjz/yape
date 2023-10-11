@@ -24,6 +24,5 @@ class RefreshRecipesUseCaseTest {
 
         coVerify(exactly = 1) { recipeRepository.refreshFromRemoteRecipes() }
         coVerify(exactly = 0) { recipeRepository.getRecipes() }
-        coVerify(exactly = 0) { recipeRepository.saveRecipesLocally(any()) }
     }
 }

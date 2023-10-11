@@ -10,6 +10,4 @@ interface RecipeRepository {
     suspend fun getRecipeById(recipeId: String): Recipe?
 
     suspend fun refreshFromRemoteRecipes()
-
-    suspend fun saveRecipesLocally(data: List<Recipe>)
 }

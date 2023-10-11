@@ -32,9 +32,8 @@ class GetRecipesUseCaseTest {
         coEvery { recipeRepository.getRecipes() } returns testFlow
         val flowResult = getRecipesUseCase()
 
+        assertEquals(testFlow, flowResult)
         coVerify(exactly = 1) { recipeRepository.getRecipes() }
         coVerify(exactly = 0) { recipeRepository.refreshFromRemoteRecipes() }
-        coVerify(exactly = 0) { recipeRepository.saveRecipesLocally(any()) }
-        assertEquals(testFlow, flowResult)
     }
 }

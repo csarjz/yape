@@ -9,10 +9,7 @@ class RecipeLocalDataSourceImpl @Inject constructor(
     private val dao: RecipeDao
 ) : RecipeLocalDataSource {
 
-    override suspend fun saveRecipes(data: List<RecipeEntity>) {
-        dao.deleteAll()
-        dao.insert(data)
-    }
+    override suspend fun saveRecipes(data: List<RecipeEntity>) = dao.save(data)
 
     override fun getRecipes(): Flow<List<RecipeEntity>> = dao.getRecipes()
 
