@@ -76,11 +76,16 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.compose.navigation)
+    implementation(libs.compose.icons)
 
     // hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
+
+    // coil
+    implementation(libs.coil)
+    implementation(libs.coil.compose)
 
     // testing
     testImplementation(libs.junit)
