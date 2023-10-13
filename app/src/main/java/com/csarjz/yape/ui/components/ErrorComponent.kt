@@ -15,7 +15,6 @@ import com.csarjz.domain.util.BadRequestException
 import com.csarjz.domain.util.GenericException
 import com.csarjz.domain.util.NetworkException
 import com.csarjz.yape.R
-import com.csarjz.yape.ui.base.BaseScreen
 import java.net.UnknownHostException
 
 @Composable

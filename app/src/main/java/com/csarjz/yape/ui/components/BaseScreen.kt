@@ -1,4 +1,4 @@
-package com.csarjz.yape.ui.base
+package com.csarjz.yape.ui.components
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
