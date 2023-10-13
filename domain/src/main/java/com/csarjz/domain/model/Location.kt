@@ -1,3 +1,8 @@
 package com.csarjz.domain.model
 
-class Location(var latitude: Double, var longitude: Double)
+import com.csarjz.domain.util.Constant.Number
+
+class Location(
+    var latitude: Double = Number.ZERO_DEC,
+    var longitude: Double = Number.ZERO_DEC
+)

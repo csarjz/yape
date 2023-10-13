@@ -4,7 +4,6 @@ import com.csarjz.data.datasource.remote.response.RecipeResponse
 import com.csarjz.data.room.entity.RecipeEntity
 import com.csarjz.domain.model.Location
 import com.csarjz.domain.model.Recipe
-import com.csarjz.domain.util.Constant.Number
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -47,5 +46,5 @@ fun RecipeResponse.toDomain() = Recipe(
     numberOfDishes = numberOfDishes ?: 0,
     imageUrl = imageUrl.orEmpty(),
     ingredients = ingredients ?: emptyList(),
-    originLocation = originLocation?.toDomain() ?: Location(Number.ZERO_DEC, Number.ZERO_DEC)
+    originLocation = originLocation?.toDomain() ?: Location()
 )
