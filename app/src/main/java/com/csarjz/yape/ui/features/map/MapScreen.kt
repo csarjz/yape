@@ -71,16 +71,16 @@ private fun ScreenContent(recipe: Recipe?, onBackClick: () -> Unit) {
                     snippet = stringResource(id = R.string.it_originated_here)
                 )
             }
+            Icon(
+                imageVector = Icons.Rounded.ArrowBack,
+                contentDescription = stringResource(id = R.string.icon_back),
+                tint = Color.Black,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .clickable(onClick = onBackClick)
+                    .padding(8.dp)
+            )
         }
-        Icon(
-            imageVector = Icons.Rounded.ArrowBack,
-            contentDescription = stringResource(id = R.string.icon_back),
-            tint = Color.Black,
-            modifier = Modifier
-                .padding(8.dp)
-                .clickable(onClick = onBackClick)
-                .padding(8.dp)
-        )
     }
 }
 
