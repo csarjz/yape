@@ -9,6 +9,7 @@
     <string name="preparation">Preparación</string>
     <string name="ingredients">Ingredientes</string>
     <string name="show_origin">Ver Origen</string>
+    <string name="it_originated_here">Se originó aquí</string>
 
     <string name="clear_text_description">Icono borrar texto</string>
     <string name="error_icon_description">Icono error</string>

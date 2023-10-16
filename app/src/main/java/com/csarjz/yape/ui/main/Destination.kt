@@ -22,8 +22,13 @@ sealed class Destination(val baseRoute: String, navArgs: List<NavArg> = emptyLis
         baseRoute = "detail",
         navArgs = listOf(NavArg("recipeId", NavType.StringType))
     ) {
-        fun createVavRoute(recipeId: String) = "$baseRoute/$recipeId"
+        fun createNavRoute(recipeId: String) = "$baseRoute/$recipeId"
     }
 
-    object Map : Destination("map")
+    object Map : Destination(
+        baseRoute = "map",
+        navArgs = listOf(NavArg("recipeId", NavType.StringType))
+    ) {
+        fun createNavRoute(recipeId: String) = "$baseRoute/$recipeId"
+    }
 }

@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import com.csarjz.yape.ui.features.detail.DetailScreen
 import com.csarjz.yape.ui.features.home.HomeScreen
+import com.csarjz.yape.ui.features.map.MapScreen
 
 @Composable
 fun AppNavigation() {
@@ -17,7 +18,7 @@ fun AppNavigation() {
             HomeScreen(
                 onNavigateToDetail = {
                     navController.navigate(
-                        route = Destination.Detail.createVavRoute(recipeId = it),
+                        route = Destination.Detail.createNavRoute(recipeId = it),
                         navOptions = navOptions { launchSingleTop = true }
                     )
                 }
@@ -28,7 +29,20 @@ fun AppNavigation() {
             requireNotNull(recipeId)
             DetailScreen(
                 recipeId = recipeId,
-                onNavigateToMap = {}
+                onNavigateToMap = { id ->
+                    navController.navigate(
+                        route = Destination.Map.createNavRoute(recipeId = id),
+                        navOptions = navOptions { launchSingleTop = true }
+                    )
+                }
+            )
+        }
+        composable(route = Destination.Map.route) {
+            val recipeId = it.arguments?.getString("recipeId")
+            requireNotNull(recipeId)
+            MapScreen(
+                recipeId = recipeId,
+                onNavigateToBack = { navController.popBackStack() }
             )
         }
     }

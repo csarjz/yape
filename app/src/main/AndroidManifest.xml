@@ -13,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Yape"
         tools:targetApi="34">
+
+        <!-- El API_KEY no debe escribirse en texto plano aquí y tampoco debe estar -->
+        <!-- incluido en git, pero lo coloco debido a que es un reto técnico -->
+        <!-- y se tiene que probar el funcionamiento sin configuración adicional -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDIPp60LeBWQprbl1K_pXxh5AzlxAzrcD4" />
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
