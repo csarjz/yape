@@ -38,6 +38,7 @@ object RetrofitModule {
         }
 
         return OkHttpClient.Builder()
+            .certificatePinner(SSLPinning.getPinnedCertificate())
             .addInterceptor(apiInterceptor)
             .addInterceptor(interceptor)
             .build()
